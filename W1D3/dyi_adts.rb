@@ -19,3 +19,23 @@ class Stack
     end
 end
 
+class Queue
+    def initialize 
+        @ivar = []
+    end
+
+    #add element to the Queue
+    def enqueue(el)
+        @ivar << el
+    end
+
+    #removes the first element of the Queue
+    def dequeue
+        @ivar.shift
+    end
+
+    #shows, but does not remove, the first element in the queue
+    def peek 
+        return @ivar[0]
+    end
+end

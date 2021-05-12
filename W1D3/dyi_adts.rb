@@ -19,6 +19,3 @@ class Stack
     end
 end
 
-class Queue
-    
-end

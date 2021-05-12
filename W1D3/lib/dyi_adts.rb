@@ -79,4 +79,29 @@ class Map
             end
         end
     end
+
+    #Element -> Value
+    #return the value of the key
+    def get(key)
+        @ivar.each_with_index do |ele, i|
+            if ele[0] == key 
+                return ele[1]
+            end
+        end
+    end
+
+    #Element -> Map!
+    #delete the key value pair
+    def delete(key)
+        @ivar.each_with_index do |ele, i|
+            if ele[0] == key
+                @ivar.delete_at(i)
+            end
+        end
+    end
+
+    #show the array
+    def show
+        return @ivar 
+    end
 end

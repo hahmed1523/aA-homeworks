@@ -2,13 +2,18 @@ class Board
   attr_accessor :cups
 
   def initialize(name1, name2)
+    @cups = Array.new(14){[]}
+    self.place_stones
   end
 
   def place_stones
     # helper method to #initialize every non-store cup with four stones each
+    (0...@cups.length-1).each {|idx| 4.times {@cups[idx] << :stone} if idx != 6}
   end
 
   def valid_move?(start_pos)
+    raise "Invalid starting cup" if start_pos >= @cups.length 
+    raise "Starting cup is empty" if @cups[start_pos].empty?
   end
 
   def make_move(start_pos, current_player_name)
